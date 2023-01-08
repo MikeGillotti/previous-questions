@@ -12,16 +12,6 @@ reddit=praw.Reddit(client_id='',
 	               password='',
 	               user_agent='')
 
-#comments = reddit.user.me().comments.new(limit=25)
-#for comment in comments:
-#	comment_up=str(comment.ups)
-#	print("ups "+comment_up)
-#	comment_score=str(comment.score)
-#	print("score "+comment_score)
-#	comment_contra=str(comment.controversiality)
-#	print("contra "+comment_contra)
-	#pprint.pprint(vars(comment))
-
 
 
 if not os.path.isfile("posts_replied_to.txt"):
@@ -46,7 +36,7 @@ for posts in nostupidq.stream.submissions():
 				post_title=re.escape(posts.title)
 				nostupid_results=list(nostupidq.search('title:'+post_title, limit=10))
 				search_results=list(allsub.search('title:'+post_title, limit=10))
-	#
+	
 				for i in search_results:
 					if i != posts.id:
 
