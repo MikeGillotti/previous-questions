@@ -16,6 +16,5 @@ while True:
 
 	comments = reddit.user.me().comments.new(limit=25)
 	for comment in comments:
-			#	comment_score=str(comment.score)
 		if comment.score <= 0:
 			comment.delete()
